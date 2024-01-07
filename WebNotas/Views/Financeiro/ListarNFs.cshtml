@@ -1,0 +1,45 @@
+﻿@using WebNotas.Models
+
+@model List<NF>
+
+@{
+    ViewData["Title"] = "Listar NFs";
+}
+
+<h1>Estes são todos os registros de NFs</h1>
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>NF Id</th>
+            <th>Numero NF</th>
+            <th>Valor Total</th>
+            <th>Data NF</th>
+            <th>CNPJ Emissor</th>
+            <th>CNPJ Destinatario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any() )
+        {
+            foreach (NF nota in Model)
+            {
+                <tr>
+                    <td>@nota.NotaFiscalId</td>
+                    <td>@nota.NumeroNf</td>
+                    <td>@nota.ValorTotal</td>
+                    <td>@nota.DataNf</td>
+                    <td>@nota.CnpjEmissorNf</td>
+                    <td>@nota.CnpjDestinatarioNf</td>
+                </tr>
+                
+            }
+           
+            
+        }
+        
+    </tbody>
+</table>

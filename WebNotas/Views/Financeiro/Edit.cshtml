@@ -1,0 +1,54 @@
+﻿@model WebNotas.Models.NF
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>NF</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NotaFiscalId" />
+            <div class="form-group">
+                <label asp-for="NumeroNf" class="control-label"></label>
+                <input asp-for="NumeroNf" class="form-control" />
+                <span asp-validation-for="NumeroNf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTotal" class="control-label"></label>
+                <input asp-for="ValorTotal" class="form-control" />
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNf" class="control-label"></label>
+                <input asp-for="DataNf" class="form-control" />
+                <span asp-validation-for="DataNf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CnpjEmissorNf" class="control-label"></label>
+                <input asp-for="CnpjEmissorNf" class="form-control" />
+                <span asp-validation-for="CnpjEmissorNf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CnpjDestinatarioNf" class="control-label"></label>
+                <input asp-for="CnpjDestinatarioNf" class="form-control" />
+                <span asp-validation-for="CnpjDestinatarioNf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
